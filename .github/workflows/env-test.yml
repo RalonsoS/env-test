@@ -1,0 +1,16 @@
+name: Imprimir Variable de Entorno
+
+on:
+    workflow_dispatch: 
+
+jobs:
+  print-env-variable:
+    runs-on: ubuntu-latest
+    environment: Prueba env  # Especifica el entorno que contiene la variable
+
+    steps:
+      - name: Imprimir la variable de entorno
+        run: |
+            echo "La variable MIVAR es: $MIVAR"
+        env:
+          MIVAR: ${{ vars.MIVAR }}  # Accede a la variable del entorno
