@@ -1,0 +1,27 @@
+name: Simple Workflow
+
+# Define cuándo debe ejecutarse el workflow
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cuando hay un push en la rama "main"
+  workflow_dispatch:  # Permite ejecutar el workflow manualmente desde la interfaz de GitHub
+
+# Definimos los jobs que queremos ejecutar
+jobs:
+  example-job:
+    runs-on: ubuntu-latest  # El job se ejecuta en una máquina con Ubuntu
+    
+    # Los steps son los pasos que el job ejecutará
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Clona el repositorio en la máquina virtual
+
+      - name: Say hello
+        run: echo "Hello, world!"  # Muestra un mensaje simple
+
+      - name: List files
+        run: ls -l  # Lista los archivos del repositorio
+
+      - name: Print current date
+        run: date  # Imprime la fecha actual
