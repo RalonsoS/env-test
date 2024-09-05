@@ -15,7 +15,7 @@ jobs:
     # Los steps son los pasos que el job ejecutará
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Clona el repositorio en la máquina virtual
+        uses: actions/checkout@v3  # Clona el repositorio en la máquina virtual
 
       - name: Say hello
         run: echo "Hello, world!"  # Muestra un mensaje simple
